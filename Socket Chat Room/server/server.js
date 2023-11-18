@@ -19,6 +19,10 @@ io.on("connection", socket=>{
         }
         
     })
+
+    socket.on("join-room", room=>{
+        socket.join(room); // what is join? It is a method that allows a socket to join a room.
+    })
     
 });
 

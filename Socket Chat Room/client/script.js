@@ -19,8 +19,6 @@ socket.on("receive-message",(message)=>{
 })
 
 
-
-
 form.addEventListener("submit",(e)=>{
     e.preventDefault();
 
@@ -51,6 +49,12 @@ sendButton.addEventListener("click",()=>{
 
 
     messageInput.value = "";
+})
+
+joinButton.addEventListener("click",()=>{
+    alert("You are joined the room: "+roomInput.value);
+    const room = roomInput.value;
+    socket.emit("join-room",room);
 })
 
 function displayMessage(message){
